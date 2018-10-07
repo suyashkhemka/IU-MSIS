@@ -7,12 +7,12 @@ class Comment
 
   public function __construct($data) {
     $this->id = isset($data['id']) ? intval($data['id']) : null;
-    $this->comment = isset($data['comment']) ? $data['comment'] : null;
+    $this->comment = $data['comment'];
 
   }
 
   public function create() {
-    
+
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
     $sql = 'INSERT Comments(comment)
             VALUES (?)';
@@ -20,11 +20,12 @@ class Comment
     $success = $statement->execute([
         $this->comment
     ]);
+    $this->id = $db->lastInsertId();
     if (!$success) {
       //TODO: Better error handling
       die ('Bad SQL on insert');
     }
-    $this->id = $db->lastInsertId();
+
   }
 
   public static function fetchAll() {
