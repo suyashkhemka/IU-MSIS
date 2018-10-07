@@ -12,6 +12,7 @@ class Comment
   }
 
   public function create() {
+    die($this->comment);
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
     $sql = 'INSERT Comments(comment)
             VALUES (?)';
