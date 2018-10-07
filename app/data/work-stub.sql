@@ -39,3 +39,9 @@ INSERT INTO Work (id, team_id, task_id, start_date, hours, completion_estimate)
 VALUES (5, 2, 1, '2018-08-01 09:30', 4, 80);
 INSERT INTO Work (id, team_id, task_id, start_date, hours, completion_estimate)
 VALUES (6, 2, 1, '2018-08-03 14:30', 3.5, 85);
+
+
+CREATE TABLE Comments (
+  id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  comments  VARCHAR(100) NOT NULL
+);
