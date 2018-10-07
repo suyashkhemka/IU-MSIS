@@ -7,6 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 $comment = new Comment($_POST);
 $comment->create();
 echo json_encode($comment);
+exit;
 }
 // 1. Go to the database and get all teams
 $comments = Comment::fetchAll();
