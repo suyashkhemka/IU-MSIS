@@ -43,7 +43,7 @@ VALUES (6, 2, 1, '2018-08-03 14:30', 3.5, 85);
 
 CREATE TABLE Comments (
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-  comments  VARCHAR(100) NOT NULL
+  comment  VARCHAR(100) NOT NULL
 );
-INSERT INTO Comments (id, comments)
+INSERT INTO Comments (id, comment)
 VALUES (1, "I have something important to say");

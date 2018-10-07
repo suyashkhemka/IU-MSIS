@@ -11,6 +11,21 @@ class Comment
 
   }
 
+  public function create() {
+    $db = new PDO(DB_SERVER, DB_USER, DB_PW);
+    $sql = 'INSERT INTO Comments(comment)
+            VALUES (?)';
+    $statement = $db->prepare($sql);
+    $success = $statement->execute([
+        $this->comment
+    ]);
+    if (!$success) {
+      //TODO: Better error handling
+      die ('Bad SQL on insert');
+    }
+    $this->id = $db->lastInsertId();
+  }
+
   public static function fetchAll() {
     // 1. Connect to the database
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
