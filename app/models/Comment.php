@@ -7,7 +7,7 @@ class Comment
 
   public function __construct($data) {
     $this->id = isset($data['id']) ? intval($data['id']) : null;
-    $this->comment = $data['comment'];
+    $this->comment = isset($data['comment']) ? $data['comment'] : "testcomment";
 
   }
 
