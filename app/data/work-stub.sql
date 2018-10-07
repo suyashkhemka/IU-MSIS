@@ -45,3 +45,5 @@ CREATE TABLE Comments (
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
   comments  VARCHAR(100) NOT NULL
 );
+INSERT INTO Comments (id, comments)
+VALUES (1, "I have something important to say");
