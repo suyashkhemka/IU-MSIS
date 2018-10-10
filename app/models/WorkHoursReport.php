@@ -21,7 +21,7 @@ class WorkHoursReport
         [$projectId]
     );
 
-    // 4. Handle the result
+    // 4. Handle the results
     // I'm going to cheat a bit here, and *not* make model objects w/ each row
     // As this is a report, an array will work ...
     // We set this up by using 'AS' statements in the SQL to get the keys right
