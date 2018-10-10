@@ -11,7 +11,7 @@ class WorkHoursReport
     $sql = 'SELECT DATE(start_date) as date, SUM(hours) AS hours
             FROM Work, Tasks
             WHERE Work.task_id = Tasks.id
-              AND Tasks.project_id = 1
+              AND Tasks.project_id = ?
             GROUP BY DATE(start_date)';
 
     $statement = $db->prepare($sql);
